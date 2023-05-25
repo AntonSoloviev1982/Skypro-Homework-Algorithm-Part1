@@ -12,13 +12,27 @@ public class Test {
         stringArrayList.add("No");
         stringArrayList.add("Yes");
         stringArrayList.add("Ok");
-        stringArrayList.add("Tre");
-        stringArrayList.add("Ok");
-        stringArrayList.add("Yes");
-        System.out.println(Arrays.toString(stringArrayList.getStringArrayList()));
-        System.out.println(stringArrayList.get(2));
 
+        StringArrayList otherArrayList = new StringArrayList(4);
+//        otherArrayList.add("Privet");
+//        otherArrayList.add("Poka");
+//        otherArrayList.add("No");
+//        otherArrayList.add("Yes");
+//        otherArrayList.add("Ok");
         System.out.println(Arrays.toString(stringArrayList.getStringArrayList()));
         System.out.println(stringArrayList.size());
+        stringArrayList.clear();
+//        System.out.println(Arrays.toString(stringArrayList.getStringArrayList()));
+//        System.out.println(stringArrayList.isEmpty());
+//        System.out.println(otherArrayList.isEmpty());
+
+//        System.out.println(stringArrayList.equals(otherArrayList));
+
+
+//        System.out.println(Arrays.toString(stringArrayList.getStringArrayList()));
+//        System.out.println(stringArrayList.get(2));
+//
+//        System.out.println(Arrays.toString(stringArrayList.getStringArrayList()));
+//        System.out.println(stringArrayList.size());
     }
 }

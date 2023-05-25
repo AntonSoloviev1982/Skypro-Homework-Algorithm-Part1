@@ -144,7 +144,7 @@ public class StringArrayList implements StringList {
         if (otherList == null) {
             throw new NullPointerException("Argument is null");
         }
-        for (int i = 0; i < this.getStringArrayList().length; i++) {
+        for (int i = 0; i < this.size(); i++) {
             if (this.get(i) != otherList.get(i)) {
                 result = false;
                 break;
@@ -163,12 +163,19 @@ public class StringArrayList implements StringList {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        boolean result = false;
+        if (size() == 0) {
+            result = true;
+        }
+        return result;
     }
 
     @Override
     public void clear() {
-
+        for (int i = 0; i < size(); i++) {
+            stringArrayList[i] = null;
+            System.out.println(i);
+        }
     }
 
     @Override
