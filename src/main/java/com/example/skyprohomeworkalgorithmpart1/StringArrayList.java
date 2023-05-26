@@ -4,10 +4,7 @@ package com.example.skyprohomeworkalgorithmpart1;
 import com.example.skyprohomeworkalgorithmpart1.exception.ElementNotFoundException;
 import com.example.skyprohomeworkalgorithmpart1.exception.NoSuchIndexException;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 
 public class StringArrayList implements StringList {
 
@@ -172,16 +169,16 @@ public class StringArrayList implements StringList {
 
     @Override
     public void clear() {
-        for (int i = 0; i < size(); i++) {
-            stringArrayList[i] = null;
-            System.out.println(i);
-        }
+        stringArrayList = Arrays.stream(stringArrayList).map(e -> e = null).toArray(String []::new);
     }
 
     @Override
     public String[] toArray() {
-        return new String[0];
+        String [] newArray = stringArrayList.clone();
+        return newArray;
     }
+
+
 
 
     public boolean isArrayFull() {
