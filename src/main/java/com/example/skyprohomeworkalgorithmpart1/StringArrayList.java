@@ -5,6 +5,7 @@ import com.example.skyprohomeworkalgorithmpart1.exception.ElementNotFoundExcepti
 import com.example.skyprohomeworkalgorithmpart1.exception.NoSuchIndexException;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class StringArrayList implements StringList {
 
@@ -62,7 +63,7 @@ public class StringArrayList implements StringList {
             throw new NullPointerException("String is null");
         }
         stringArrayList[index] = item;
-        return null;
+        return item;
     }
 
     @Override
@@ -136,21 +137,22 @@ public class StringArrayList implements StringList {
     }
 
     @Override
-    public boolean equals(StringList otherList) {
-        boolean result = true;
-        if (otherList == null) {
-            throw new NullPointerException("Argument is null");
+    public boolean equals(StringArrayList otherList) {
+
+        if (this.getStringArrayList()==otherList.getStringArrayList())
+            return true;
+        if (this.getStringArrayList()==null || otherList.getStringArrayList()==null)
+            return false;
+
+        int length = this.getStringArrayList().length;
+        if (otherList.getStringArrayList().length != length)
+            return false;
+
+        for (int i=0; i<length; i++) {
+            if (!Objects.equals(this.getStringArrayList()[i], otherList.getStringArrayList()[i]))
+                return false;
         }
-        for (int i = 0; i < this.size(); i++) {
-            if (this.get(i) != otherList.get(i)) {
-                result = false;
-                break;
-            }
-        }
-        if (this.size() != otherList.size()) {
-            result = false;
-        }
-        return result;
+        return true;
     }
 
     @Override
